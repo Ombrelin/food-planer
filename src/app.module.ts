@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { AuthController } from "./controllers/auth.controller";
 
 @Module({
   imports: [
@@ -8,7 +9,7 @@ import { join } from 'path';
       rootPath: join(__dirname, '..', 'client'),
     })
   ],
-  controllers: [],
+  controllers: [AuthController],
   providers: [],
 })
 export class AppModule {}
